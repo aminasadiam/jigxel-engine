@@ -4,10 +4,10 @@ import (
 	"log"
 	"runtime"
 
-	"github.com/aminasadiam/jigxer-engine/internal/ecs"
-	"github.com/aminasadiam/jigxer-engine/internal/graphics"
-	"github.com/aminasadiam/jigxer-engine/internal/input"
-	"github.com/aminasadiam/jigxer-engine/internal/physics"
+	"github.com/aminasadiam/jigxer-engine/pkg/ecs"
+	"github.com/aminasadiam/jigxer-engine/pkg/graphics"
+	"github.com/aminasadiam/jigxer-engine/pkg/input"
+	"github.com/aminasadiam/jigxer-engine/pkg/physics"
 	"github.com/go-gl/gl/v4.1-core/gl"
 	"github.com/go-gl/glfw/v3.3/glfw"
 )

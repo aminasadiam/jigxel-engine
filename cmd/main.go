@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/aminasadiam/jigxer-engine/internal/ecs"
-	"github.com/aminasadiam/jigxer-engine/internal/physics"
+	"github.com/aminasadiam/jigxer-engine/pkg/ecs"
+	"github.com/aminasadiam/jigxer-engine/pkg/physics"
 )
 
 func main() {

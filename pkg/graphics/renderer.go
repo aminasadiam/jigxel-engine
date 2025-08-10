@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/aminasadiam/jigxer-engine/internal/ecs"
+	"github.com/aminasadiam/jigxer-engine/pkg/ecs"
 	"github.com/go-gl/gl/v4.1-core/gl"
 	"github.com/go-gl/mathgl/mgl32"
 )

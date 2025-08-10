@@ -46,7 +46,7 @@ A modern, modular game engine written in Go with OpenGL rendering, physics simul
 jigxer-engine/
 ├── cmd/
 │   └── main.go              # Main entry point
-├── internal/
+├── pkg/                     # Public API packages
 │   ├── engine/
 │   │   └── engine.go        # Core engine implementation
 │   ├── ecs/
@@ -60,14 +60,34 @@ jigxer-engine/
 │   │   └── manager.go       # Audio management
 │   └── physics/
 │       └── world.go         # Physics simulation
+├── internal/                # Private implementation details
 ├── go.mod                   # Go module file
 └── README.md               # This file
 ```
 
 ## Getting Started
 
+### Using as a Package
+
+You can import this engine into your own Go projects using:
+
+```go
+import (
+    "github.com/aminasadiam/jigxer-engine/pkg/engine"
+    "github.com/aminasadiam/jigxer-engine/pkg/ecs"
+    // Import other packages as needed
+)
+```
+
+To add the engine to your project:
+
+```bash
+go get github.com/aminasadiam/jigxer-engine
+```
+
 ### Prerequisites
 
+```
 - Go 1.24.5 or later
 - OpenGL 4.1 compatible graphics card
 - GLFW development libraries

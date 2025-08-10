@@ -4,8 +4,8 @@ import (
 	"log"
 	"time"
 
-	"github.com/aminasadiam/jigxer-engine/internal/ecs"
-	"github.com/aminasadiam/jigxer-engine/internal/engine"
+	"github.com/aminasadiam/jigxer-engine/pkg/ecs"
+	"github.com/aminasadiam/jigxer-engine/pkg/engine"
 	"github.com/go-gl/mathgl/mgl32"
 )
 

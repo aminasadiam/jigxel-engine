@@ -1,40 +1,46 @@
-# Jigxer Engine
+# Jigxel Engine
 
 A modern, modular game engine written in Go with OpenGL rendering, physics simulation, and an Entity-Component-System (ECS) architecture.
 
 ## Features
 
 ### Core Engine
+
 - **Main Engine Loop**: Efficient game loop with fixed time step
 - **Window Management**: GLFW-based window creation and management
 - **Scene Management**: Entity and component management system
 - **Resource Management**: Centralized resource loading and caching
 
 ### Graphics System
+
 - **OpenGL 4.1 Rendering**: Modern OpenGL with shader support
 - **Shader Management**: GLSL shader compilation and management
 - **Mesh Rendering**: 3D mesh rendering with vertex buffers
 - **Camera System**: Perspective and orthographic camera support
 
 ### Entity-Component-System (ECS)
+
 - **Entity Management**: Efficient entity creation and destruction
 - **Component System**: Flexible component-based architecture
 - **System Processing**: Parallel system execution
 - **Built-in Components**: Transform, Mesh, Physics, Audio, and Tag components
 
 ### Input System
+
 - **Keyboard Input**: Full keyboard support with key state tracking
 - **Mouse Input**: Mouse position, buttons, and scroll wheel
 - **Input Events**: Press, release, and hold detection
 - **Cursor Management**: Cursor mode control (normal, hidden, disabled)
 
 ### Physics System
+
 - **Rigid Body Physics**: Mass-based physics simulation
 - **Collision Detection**: AABB collision detection
 - **Gravity System**: Configurable gravity vector
 - **Collision Resolution**: Basic collision response
 
 ### Audio System
+
 - **Sound Management**: Audio file loading and playback
 - **Volume Control**: Per-sound volume adjustment
 - **Looping Support**: Sound looping capabilities
@@ -43,7 +49,7 @@ A modern, modular game engine written in Go with OpenGL rendering, physics simul
 ## Project Structure
 
 ```
-jigxer-engine/
+jigxel-engine/
 ├── cmd/
 │   └── main.go              # Main entry point
 ├── pkg/                     # Public API packages
@@ -73,8 +79,8 @@ You can import this engine into your own Go projects using:
 
 ```go
 import (
-    "github.com/aminasadiam/jigxer-engine/pkg/engine"
-    "github.com/aminasadiam/jigxer-engine/pkg/ecs"
+    "github.com/aminasadiam/jigxel-engine/pkg/engine"
+    "github.com/aminasadiam/jigxel-engine/pkg/ecs"
     // Import other packages as needed
 )
 ```
@@ -82,12 +88,12 @@ import (
 To add the engine to your project:
 
 ```bash
-go get github.com/aminasadiam/jigxer-engine
+go get github.com/aminasadiam/jigxel-engine
 ```
 
 ### Prerequisites
 
-```
+````
 - Go 1.24.5 or later
 - OpenGL 4.1 compatible graphics card
 - GLFW development libraries
@@ -96,16 +102,18 @@ go get github.com/aminasadiam/jigxer-engine
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/aminasadiam/jigxer-engine.git
-cd jigxer-engine
-```
+git clone https://github.com/aminasadiam/jigxel-engine.git
+cd jigxel-engine
+````
 
 2. Install dependencies:
+
 ```bash
 go mod tidy
 ```
 
 3. Run the example:
+
 ```bash
 go run cmd/main.go
 ```
@@ -117,27 +125,27 @@ package main
 
 import (
     "log"
-    "github.com/aminasadiam/jigxer-engine/internal/engine"
-    "github.com/aminasadiam/jigxer-engine/internal/ecs"
+    "github.com/aminasadiam/jigxel-engine/internal/engine"
+    "github.com/aminasadiam/jigxel-engine/internal/ecs"
     "github.com/go-gl/mathgl/mgl32"
 )
 
 func main() {
     // Create engine
     gameEngine := engine.NewEngine("My Game", 800, 600)
-    
+
     // Initialize
     if err := gameEngine.Init(); err != nil {
         log.Fatal("Failed to initialize engine:", err)
     }
     defer gameEngine.Shutdown()
-    
+
     // Get ECS world
     world := gameEngine.GetECS()
-    
+
     // Create an entity
     entityID := world.CreateEntity()
-    
+
     // Add components
     transform := ecs.NewTransformComponent(
         mgl32.Vec3{0, 0, 0},    // Position
@@ -145,11 +153,11 @@ func main() {
         mgl32.Vec3{1, 1, 1},    // Scale
     )
     world.AddComponent(entityID, transform)
-    
+
     // Add mesh component
     mesh := ecs.NewMeshComponent("default")
     world.AddComponent(entityID, mesh)
-    
+
     // Run the engine
     gameEngine.Run()
 }
@@ -158,23 +166,30 @@ func main() {
 ## Architecture
 
 ### Engine Core
+
 The engine core manages the main game loop, window creation, and system initialization. It coordinates all subsystems and provides a clean API for game development.
 
 ### ECS System
+
 The Entity-Component-System provides a flexible architecture for game objects:
+
 - **Entities**: Unique identifiers for game objects
 - **Components**: Data containers (Transform, Mesh, Physics, etc.)
 - **Systems**: Logic processors that operate on components
 
 ### Rendering Pipeline
+
 The graphics system uses modern OpenGL with:
+
 - Vertex Buffer Objects (VBO) for efficient data transfer
 - Vertex Array Objects (VAO) for vertex attribute configuration
 - Shader programs for programmable rendering pipeline
 - Matrix transformations for 3D rendering
 
 ### Physics Simulation
+
 The physics system provides:
+
 - Rigid body dynamics with mass and forces
 - AABB collision detection
 - Basic collision response

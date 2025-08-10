@@ -3,12 +3,12 @@ package main
 import (
 	"fmt"
 
-	"github.com/aminasadiam/jigxer-engine/pkg/ecs"
-	"github.com/aminasadiam/jigxer-engine/pkg/physics"
+	"github.com/aminasadiam/jigxel-engine/pkg/ecs"
+	"github.com/aminasadiam/jigxel-engine/pkg/physics"
 )
 
 func main() {
-	fmt.Println("Jigxer Engine - Basic Demo")
+	fmt.Println("jigxel Engine - Basic Demo")
 
 	// Create ECS world
 	world := ecs.NewWorld()

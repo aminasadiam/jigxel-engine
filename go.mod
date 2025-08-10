@@ -1,4 +1,4 @@
-module github.com/aminasadiam/jigxer-engine
+module github.com/aminasadiam/jigxel-engine
 
 go 1.24.5
 

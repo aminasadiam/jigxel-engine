@@ -4,14 +4,14 @@ import (
 	"log"
 	"time"
 
-	"github.com/aminasadiam/jigxer-engine/pkg/ecs"
-	"github.com/aminasadiam/jigxer-engine/pkg/engine"
+	"github.com/aminasadiam/jigxel-engine/pkg/ecs"
+	"github.com/aminasadiam/jigxel-engine/pkg/engine"
 	"github.com/go-gl/mathgl/mgl32"
 )
 
 func main() {
 	// Create engine
-	gameEngine := engine.NewEngine("Jigxer Engine - Basic Example", 800, 600)
+	gameEngine := engine.NewEngine("jigxel Engine - Basic Example", 800, 600)
 
 	// Initialize
 	if err := gameEngine.Init(); err != nil {
